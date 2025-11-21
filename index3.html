@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AROSCAI - Smart Home Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- nav and hero section -->
+    <section
+        class="relative min-h-screen flex flex-col items-center bg-black text-white pb-16 pt-8 bg-[url(https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/bg-gradient-3.svg)] bg-center bg-cover">
+        <nav class="flex items-center border border-slate-700 px-6 py-4 rounded-full text-white text-sm 
+           w-[95%] md:w-[85%] lg:w-[75%] mx-auto lg:justify-between max-md:justify-between">
+            <a href="index.html">
+                <img src="images/logo1.png" alt="AROSCAI Logo" class="w-10 h-10 object-contain" />
+            </a>
+            <div class="hidden md:flex items-center gap-6 ml-7">
+                <a href="#" class="relative overflow-hidden h-6 group">
+                    <span class="block group-hover:-translate-y-full transition-transform duration-300">Products</span>
+                    <span
+                        class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Products</span>
+                </a>
+                <a href="#" class="relative overflow-hidden h-6 group">
+                    <span class="block group-hover:-translate-y-full transition-transform duration-300">Stories</span>
+                    <span
+                        class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Stories</span>
+                </a>
+                <a href="#" class="relative overflow-hidden h-6 group">
+                    <span class="block group-hover:-translate-y-full transition-transform duration-300">Pricing</span>
+                    <span
+                        class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Pricing</span>
+                </a>
+                <a href="#" class="relative overflow-hidden h-6 group">
+                    <span class="block group-hover:-translate-y-full transition-transform duration-300">Docs</span>
+                    <span
+                        class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Docs</span>
+                </a>
+            </div>
+
+            <div class="hidden ml-14 md:flex items-center gap-4">
+                <button
+                    class="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+                    Contact
+                </button>
+                <button
+                    class="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
+                    Get Started
+                </button>
+            </div>
+            <button id="menuToggle" class="md:hidden text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div id="mobileMenu"
+                class="fixed z-[999] hidden max-h-screen top-0 text-base left-0 bg-black w-full h-full flex-col items-center justify-center gap-4">
+                <a onclick="closeNavbar()" class="hover:text-indigo-600" href="#">
+                    Products
+                </a>
+                <a onclick="closeNavbar()" class="hover:text-indigo-600" href="#">
+                    Customer Stories
+                </a>
+                <a onclick="closeNavbar()" class="hover:text-indigo-600" href="#">
+                    Pricing
+                </a>
+                <a onclick="closeNavbar()" class="hover:text-indigo-600" href="#">
+                    Docs
+                </a>
+                <button onclick="closeNavbar()"
+                    class="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+                    Contact
+                </button>
+                <button onclick="closeNavbar()"
+                    class="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
+                    Get Started
+                </button>
+            </div>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-2 border border-white/15 rounded-full px-4 py-2 text-sm mt-24">
+            <p>Explore how we help grow brands.</p>
+            <a href="#" class="flex items-center gap-1 font-medium">
+                Read more
+                <svg class="mt-0.5" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.959 9.5h11.083m0 0L9.501 3.96m5.541 5.54-5.541 5.542" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+
+
+        <h1
+            class="text-4xl md:text-6xl text-center font-semibold max-w-3xl mt-5 bg-gradient-to-r from-white to-[#748298] text-transparent bg-clip-text">
+            Solutions to Elevate Your Business Growth
+        </h1>
+        <p class="text-slate-300 md:text-base line-clamp-3 max-md:px-2 text-center max-w-2xl mt-3">
+            Unlock potential with tailored strategies designed for success. Simplify challenges, maximize results, and
+            stay ahead in the competitive market.
+        </p>
+
+        <div class="grid grid-cols-2 gap-2 mt-8 text-sm">
+            <button class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 transition rounded-full">
+                Get Started
+            </button>
+            <button class="flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-6 py-3">
+                <span>Learn More</span>
+                <svg class="mt-0.5" width="6" height="8" viewBox="0 0 6 8" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.25.5 4.75 4l-3.5 3.5" stroke="currentColor" stroke-opacity=".4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- IMAGE SECTION -->
+        <div
+            class="mt-10 flex flex-col md:flex-row flex-wrap justify-center items-center gap-6 max-w-6xl w-full mx-auto px-4 ">
+            <img alt=""
+                class="w-[90vw] h-[60vh] md:w-[25%] md:h-[70vh] rounded-lg object-cover hover:-translate-y-1 transition duration-300"
+                src="images/img1.png" />
+
+            <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between bg-[#BDDDDF] rounded-2xl overflow-hidden w-[90vw] md:w-[45%] md:h-[70vh] transition duration-300 hover:-translate-y-1">
+                <img alt="AROSCAI" class="w-full md:w-1/2 h-56 md:h-full object-cover" src="images/img2.png" />
+                <div class="flex flex-col justify-center items-center text-center p-6 text-gray-800 md:w-1/2">
+                    <h3 class="text-3xl md:text-xl font-semibold mb-3 tracking-wide">AROSCAI</h3>
+                    <p class="text-sm leading-relaxed mb-5">
+                        A premium brand of smart home electronics offering a range of products designed to simplify
+                        daily life through
+                        innovative technology. The brand focuses on providing high-end, luxury products that are both
+                        sophisticated and
+                        user-friendly.
+                    </p>
+                    <div class="flex items-center justify-center gap-8 text-center">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">50+</h4>
+                            <p class="text-xs text-gray-700">Best Products</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">150+</h4>
+                            <p class="text-xs text-gray-700">Installations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img alt=""
+                class="w-[90vw] h-[60vh] md:w-[25%] md:h-[70vh] rounded-lg object-cover object-left hover:-translate-y-1 transition duration-300"
+                src="images/img4.png" />
+        </div>
+    </section>
+
+    <section class="w-full overflow-hidden">
+        <!-- TOP SECTION -->
+        <div class="bg-[#0C0636] text-white relative h-auto md:h-[70vh] flex items-center py-10 md:py-0">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6 w-full h-full">
+
+                <!-- Content First on Mobile -->
+                <div
+                    class="order-1 md:order-2  items-center flex flex-col justify-top mt-52 h-full text-center md:text-left px-0 md:px-0">
+                    <!-- Heading always center -->
+                    <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center">
+                        Why choose AROSCAI SMART Products?
+                    </h2>
+
+                    <!-- Paragraph (center on mobile, left on desktop) -->
+                    <p
+                        class="text-white/80 leading-relaxed mb-6 text-center md:text-left mx-auto md:mx-0 px-4 md:px-0 max-w-xl">
+                        Unlock the boundless possibilities of modern living with AROSCAI Smart Home.
+                        With our innovative solutions, we seamlessly integrate cutting-edge technology
+                        into every aspect of your home, ensuring unparalleled convenience, security,
+                        and efficiency.
+                    </p>
+
+                    <!-- Stats (center on mobile, left on desktop) -->
+                    <div class="flex justify-center md:justify-start gap-10">
+                        <div>
+                            <h4 class="text-2xl font-bold text-white">50+</h4>
+                            <p class="text-sm text-white/70">Best Products</p>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-white">150+</h4>
+                            <p class="text-sm text-white/70">Installations</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Image Second on Mobile -->
+                <div class="order-2 md:order-1 flex justify-center items-center h-[40vh] md:h-full">
+                    <img src="images/img2.png" alt="AROSCAI Products"
+                        class="w-full h-full object-cover rounded-xl shadow-lg" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- BOTTOM SECTION -->
+        <div class="bg-[#0C0636] relative overflow-hidden pt-0 pb-0">
+            <!-- CARDS SECTION -->
+            <div
+                class="bg-[#BDDDDF] rounded-t-[40px] pt-32 pb-16 relative overflow-x-auto md:overflow-visible scrollbar-hide">
+                <div class="flex md:grid md:grid-cols-4 gap-6 px-6 max-w-6xl mx-auto -mt-24 md:mt-[-80px]">
+                    <!-- CARD 1 -->
+                    <div class="bg-white rounded-2xl shadow-md text-center p-6  flex-shrink-0 
+               w-[240px] h-[280px] sm:w-[260px] sm:h-[300px] md:w-[280px] md:h-[320px]
+               lg:w-[250px] lg:h-[280px] hover:-translate-y-1 transition duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center 
+                 bg-gradient-to-r from-purple-400 to-indigo-500 text-white text-3xl shadow-md">
+                            <i class="ri-remote-control-line"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-900">
+                            Remote Access & Control
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Control from anywhere across the world through a simple app.
+                        </p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="bg-white rounded-2xl shadow-md text-center p-6  flex-shrink-0 
+               w-[240px] h-[280px] sm:w-[260px] sm:h-[300px] md:w-[280px] md:h-[320px]
+               lg:w-[250px] lg:h-[280px] hover:-translate-y-1 transition duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center 
+                 bg-gradient-to-r from-purple-400 to-indigo-500 text-white text-3xl shadow-md">
+                            <i class="ri-tools-line"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-900">Modular & Retrofit</h3>
+                        <p class="text-sm text-gray-600">
+                            Easy installation and expandable connectivity options.
+                        </p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="bg-white rounded-2xl shadow-md text-center p-6  flex-shrink-0 
+               w-[240px] h-[280px] sm:w-[260px] sm:h-[300px] md:w-[280px] md:h-[320px]
+               lg:w-[250px] lg:h-[280px] hover:-translate-y-1 transition duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center 
+                 bg-gradient-to-r from-purple-400 to-indigo-500 text-white text-3xl shadow-md">
+                            <i class="ri-customer-service-2-line"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-900">24x7 Tech Support</h3>
+                        <p class="text-sm text-gray-600">
+                            Get instant support whenever you need it.
+                        </p>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="bg-white rounded-2xl shadow-md text-center p-6  flex-shrink-0 
+               w-[240px] h-[280px] sm:w-[260px] sm:h-[300px] md:w-[280px] md:h-[320px]
+               lg:w-[250px] lg:h-[280px] hover:-translate-y-1 transition duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center 
+                 bg-gradient-to-r from-purple-400 to-indigo-500 text-white text-3xl shadow-md">
+                            <i class="ri-lock-line"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-900">
+                            Security & Surveillance
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Advanced locks and smart video monitoring for safety.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Products Showcase -->
+    <section class="products-showcase">
+        <h2 style="font-size: 2.5rem; font-weight: 800; color: #000;">Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop"
+                        alt="Smart Panel">
+                </div>
+                <div class="product-content">
+                    <div class="product-badge">Smart Control</div>
+                    <h3 style="font-weight: 700; margin-bottom: 1rem; color: #000;">Touch Panels & Modular Switches</h3>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.5;">Smart Switch stands as a trailblazer
+                        in connected home technology.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589939705882-02aa773e3d1e?w=400&h=250&fit=crop"
+                        alt="Smart Lock">
+                </div>
+                <div class="product-content">
+                    <div class="product-badge">Security</div>
+                    <h3 style="font-weight: 700; margin-bottom: 1rem; color: #000;">Digital Door Locks</h3>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.5;">Managing your home security has never
+                        been easier.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1537528148405-c42a9e44eb43?w=400&h=250&fit=crop"
+                        alt="Voice Control">
+                </div>
+                <div class="product-content">
+                    <div class="product-badge">Voice Control</div>
+                    <h3 style="font-weight: 700; margin-bottom: 1rem; color: #000;">Voice Assistant Integration</h3>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.5;">Control devices with Alexa and Google
+                        Assistant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start justify-center gap-8 px-4 md:px-0 py-10">
+        <img class="max-w-sm w-full rounded-xl h-auto"
+            src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&w=830&h=844&auto=format&fit=crop"
+            alt="" />
+        <div>
+            <p class="text-indigo-600 text-sm font-medium">FAQ's</p>
+            <h1 class="text-3xl font-semibold">Looking for answer?</h1>
+            <p class="text-sm text-slate-500 mt-2 pb-4">
+                Ship Beautiful Frontends Without the Overhead — Customizable, Scalable and Developer-Friendly UI
+                Components.
+            </p>
+
+            <!-- FAQ Items -->
+            <div id="faqContainer">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <h2 style="font-size: 2.5rem; font-weight: 800; color: #000;">We Provide the best in class Smart Home Products.
+        </h2>
+
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1558089633-73e60aaf5bfc?w=400&h=250&fit=crop"
+                        alt="Touch Panels">
+                </div>
+                <div class="solution-content">
+                    <div class="solution-title">Touch Panels & Modular Touch Switches</div>
+                    <div class="solution-desc">Smart Switch stands as a trailblazer in the realm of connected home
+                        technology, reshaping the very essence of user-friendliness.</div>
+                    <a href="#" class="explore-link">Explore Our Products →</a>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1589939705882-02aa773e3d1e?w=400&h=250&fit=crop"
+                        alt="Security">
+                </div>
+                <div class="solution-content">
+                    <div class="solution-title">Security and Surveillance Systems</div>
+                    <div class="solution-desc">Digital Door Locks & Video Door Phones, managing your home security has
+                        never been easier. Connect the lock to your smartphone.</div>
+                    <a href="#" class="explore-link">Explore Our Products →</a>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1537528148405-c42a9e44eb43?w=400&h=250&fit=crop"
+                        alt="Voice Integration">
+                </div>
+                <div class="solution-content">
+                    <div class="solution-title">Voice Assistant Integration</div>
+                    <div class="solution-desc">Voice Command To Operate Devices With Alexa And Google Assistant. Control
+                        your home appliances seamlessly through voice.</div>
+                    <a href="#" class="explore-link">Explore Our Products →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">Real Feedbacks From Our Clients</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">"I have been consistently impressed with their quality products and
+                    services I have purchased variety of electronic devices from them and I have always been satisfied
+                    with the quality of products"</div>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Nihar Jain</h4>
+                        <p>Businessman</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"I am absolutely thrilled with the Smart Home Automation services provided
+                    by your company! The convenience and control I now have over my home is remarkable. It has truly
+                    transformed the way I live."</div>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Rahul Senapati</h4>
+                        <p>Businessman</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <h2 style="font-size: 2.5rem; font-weight: 800; color: #000; margin-bottom: 0.5rem;">Choose the Best Pricing
+            Plan</h2>
+        <p style="color: #666; margin-bottom: 2rem; max-width: 600px;">Choose the best plan to suits your need. Do not
+            worry if you need more customized plan. Our Team will visit for requirement and feasibility analysis.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: #000;">Basic Plan</h3>
+                <div class="price">₹ 99,999</div>
+                <div class="price-label">Best for starting out</div>
+                <ul class="pricing-features">
+                    <li>Upto 16 appliances Automation</li>
+                    <li>Outdoor Security System</li>
+                    <li>Voice Control Integration</li>
+                    <li>Mobile Application Control</li>
+                    <li>Free Installation Device</li>
+                    <li>24/7 Customer Service</li>
+                </ul>
+                <button class="enquire-btn">Enquire Now</button>
+            </div>
+            <div class="pricing-card">
+                <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: #000;">Standard Plan</h3>
+                <div class="price">₹ 1,99,999</div>
+                <div class="price-label">Most popular</div>
+                <ul class="pricing-features">
+                    <li>Upto 24 appliances Automation</li>
+                    <li>Advanced Security Systems</li>
+                    <li>Voice Control Integration</li>
+                    <li>Mobile Application Control</li>
+                    <li>Free Installation Device</li>
+                    <li>24/7 Customer Service</li>
+                </ul>
+                <button class="enquire-btn">Enquire Now</button>
+            </div>
+            <div class="pricing-card">
+                <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: #000;">Premium Plan</h3>
+                <div class="price">₹ 2,99,999</div>
+                <div class="price-label">Full home automation</div>
+                <ul class="pricing-features">
+                    <li>Upto 36 appliances Automation</li>
+                    <li>Complete Security Systems</li>
+                    <li>Voice Control Integration</li>
+                    <li>Mobile Application Control</li>
+                    <li>Free Installation Device</li>
+                    <li>Full-Home Automation</li>
+                </ul>
+                <button class="enquire-btn">Enquire Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+        style="padding: 4rem 2rem; background: linear-gradient(135deg, #001a4d 0%, #1a1f5e 100%); color: white; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Download AROSCAI SMART Smartphone App</h2>
+        <p style="color: #c0c0c0; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Experience seamless home control with our mobile app. Manage all your smart home devices from anywhere.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button class="enquire-btn" style="width: auto; padding: 1rem 2rem;">Download on iOS</button>
+            <button class="enquire-btn" style="width: auto; padding: 1rem 2rem;">Download on Android</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="footer flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black">
+        <div class="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
+            <a href="https://prebuiltui.com">
+                <img src="images/logo1.png" alt="AROSCAI Logo" class="w-20 h-20 object-contain" />
+            </a>
+            <div>
+                <p class="text-slate-100 font-semibold">Product</p>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="/" class="hover:text-indigo-600 transition">Home</a></li>
+                    <li><a href="/" class="hover:text-indigo-600 transition">Support</a></li>
+                    <li><a href="/" class="hover:text-indigo-600 transition">Pricing</a></li>
+                    <li><a href="/" class="hover:text-indigo-600 transition">Affiliate</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-slate-100 font-semibold">Resources</p>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="/" class="hover:text-indigo-600 transition">Company</a></li>
+                    <li><a href="/" class="hover:text-indigo-600 transition">Blogs</a></li>
+                    <li><a href="/" class="hover:text-indigo-600 transition">Community</a></li>
+                    <li><a href="/" class="hover:text-indigo-600 transition">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
+            <p class="max-w-60">Making every customer feel valued—no matter the size of your audience.</p>
+            <div class="flex items-center gap-4 mt-3">
+                <a href="https://dribbble.com/prebuiltui" target="_blank" rel="noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-dribbble size-5 hover:text-indigo-500" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
+                        <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
+                        <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/prebuiltui" target="_blank" rel="noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-linkedin size-5 hover:text-indigo-500" aria-hidden="true">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect width="4" height="12" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-twitter size-5 hover:text-indigo-500" aria-hidden="true">
+                        <path
+                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@prebuiltui" target="_blank" rel="noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-youtube size-6 hover:text-indigo-500" aria-hidden="true">
+                        <path
+                            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                        </path>
+                        <path d="m10 15 5-3-5-3z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="mt-3 text-center">© 2025 <a href="https://prebuiltui.com">PrebuiltUI</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
