@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,37 +19,43 @@
             --text-light: #cbd5e1;
             --border: #334155;
         }
+
         body {
             background-color: var(--bg);
             color: var(--text);
         }
+
         .primary-btn {
             background-color: var(--primary);
             color: white;
             transition: all 0.3s ease;
         }
+
         .primary-btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
+
         .spec-card {
             background-color: var(--bg-secondary);
             border: 1px solid var(--border);
         }
     </style>
 </head>
+
 <body>
     <div class="min-h-screen">
         <!-- Navigation -->
         <nav class="border-b" style="border-color: var(--border);">
             <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-                 <!-- Logo -->
+                <!-- Logo -->
                 <div class="flex items-center gap-2">
                     <div class="w-10 h-10 rounded-lg gradient-text flex items-center justify-center text-2xl font-bold">
                         <img src="images/logo1.png" alt="">
-                         </div> <span class="text-xl font-bold gradient-text">Smartronics</span>
+                    </div> <span class="text-xl font-bold gradient-text">Smartronics</span>
                 </div>
-                <a href="index.html#products" class="flex items-center gap-2 px-4 py-2 rounded-lg" style="color: var(--text-light); border: 1px solid var(--border);">
+                <a href="index.html#products" class="flex items-center gap-2 px-4 py-2 rounded-lg"
+                    style="color: var(--text-light); border: 1px solid var(--border);">
                     <i class="ri-arrow-left-line"></i> Back to Products
                 </a>
             </div>
@@ -59,21 +66,25 @@
             <div class="max-w-7xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div class="inline-block px-4 py-2 rounded-full mb-4" style="background-color: var(--bg-secondary); border: 1px solid var(--primary);">
+                        <div class="inline-block px-4 py-2 rounded-full mb-4"
+                            style="background-color: var(--bg-secondary); border: 1px solid var(--primary);">
                             <span style="color: var(--primary);">New Release</span>
                         </div>
                         <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Wi-Fi Smart Touch Panels</h1>
-                        <p class="text-lg mb-6" style="color: var(--text-light);">Experience the future of home automation with our capacitive touch technology and seamless app control. Perfect for modern homes seeking elegance and functionality.</p>
+                        <p class="text-lg mb-6" style="color: var(--text-light);">Experience the future of home
+                            automation with our capacitive touch technology and seamless app control. Perfect for modern
+                            homes seeking elegance and functionality.</p>
                         <div class="flex gap-4 flex-wrap">
-                            <button class="primary-btn px-8 py-3 rounded-lg font-semibold flex items-center gap-2">
-                                <i class="ri-shopping-cart-line"></i> Get Now
-                            </button>
-                            <button class="px-8 py-3 rounded-lg font-semibold" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
-                                <i class="ri-video-play-line"></i> Watch Demo
-                            </button>
+                            <a href="index.html#contact-form">
+                                <button class="primary-btn px-8 py-3 rounded-lg font-semibold flex items-center gap-2">
+                                    <i class="ri-shopping-cart-line"></i> Get Now
+                                </button>
+                            </a>
+                           
                         </div>
                     </div>
-                    <div class="relative h-96 rounded-2xl overflow-hidden" style="background: linear-gradient(135deg, #818cf8, #f472b6);">
+                    <div class="relative h-96 rounded-2xl overflow-hidden"
+                        style="background: linear-gradient(135deg, #818cf8, #f472b6);">
                         <img src="images/pro1.jpg" alt="Smart Touch Panel" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -88,32 +99,40 @@
                     <div class="spec-card p-6 rounded-xl">
                         <div class="text-3xl mb-4" style="color: var(--primary);"><i class="ri-touch-line"></i></div>
                         <h3 class="text-xl font-bold mb-3">Capacitive Touch</h3>
-                        <p style="color: var(--text-light);">Advanced touch sensors with high sensitivity and responsiveness for intuitive control.</p>
+                        <p style="color: var(--text-light);">Advanced touch sensors with high sensitivity and
+                            responsiveness for intuitive control.</p>
                     </div>
                     <div class="spec-card p-6 rounded-xl">
                         <div class="text-3xl mb-4" style="color: var(--secondary);"><i class="ri-wifi-line"></i></div>
                         <h3 class="text-xl font-bold mb-3">Wi-Fi Connected</h3>
-                        <p style="color: var(--text-light);">Connect seamlessly with your home network for reliable smart home integration.</p>
+                        <p style="color: var(--text-light);">Connect seamlessly with your home network for reliable
+                            smart home integration.</p>
                     </div>
                     <div class="spec-card p-6 rounded-xl">
-                        <div class="text-3xl mb-4" style="color: var(--accent);"><i class="ri-smartphone-line"></i></div>
+                        <div class="text-3xl mb-4" style="color: var(--accent);"><i class="ri-smartphone-line"></i>
+                        </div>
                         <h3 class="text-xl font-bold mb-3">App Control</h3>
-                        <p style="color: var(--text-light);">Control your home from anywhere with our intuitive mobile application.</p>
+                        <p style="color: var(--text-light);">Control your home from anywhere with our intuitive mobile
+                            application.</p>
                     </div>
                     <div class="spec-card p-6 rounded-xl">
                         <div class="text-3xl mb-4" style="color: var(--primary);"><i class="ri-settings-line"></i></div>
                         <h3 class="text-xl font-bold mb-3">Easy Installation</h3>
-                        <p style="color: var(--text-light);">Simple plug-and-play setup that works with your existing electrical wiring.</p>
+                        <p style="color: var(--text-light);">Simple plug-and-play setup that works with your existing
+                            electrical wiring.</p>
                     </div>
                     <div class="spec-card p-6 rounded-xl">
                         <div class="text-3xl mb-4" style="color: var(--secondary);"><i class="ri-timer-line"></i></div>
                         <h3 class="text-xl font-bold mb-3">Scheduling</h3>
-                        <p style="color: var(--text-light);">Set up automated schedules and scenes for your daily routines.</p>
+                        <p style="color: var(--text-light);">Set up automated schedules and scenes for your daily
+                            routines.</p>
                     </div>
                     <div class="spec-card p-6 rounded-xl">
-                        <div class="text-3xl mb-4" style="color: var(--accent);"><i class="ri-shield-check-line"></i></div>
+                        <div class="text-3xl mb-4" style="color: var(--accent);"><i class="ri-shield-check-line"></i>
+                        </div>
                         <h3 class="text-xl font-bold mb-3">Secure</h3>
-                        <p style="color: var(--text-light);">End-to-end encryption ensures your home automation data stays protected.</p>
+                        <p style="color: var(--text-light);">End-to-end encryption ensures your home automation data
+                            stays protected.</p>
                     </div>
                 </div>
             </div>
@@ -140,7 +159,8 @@
                                 <li><strong>Wi-Fi:</strong> 2.4GHz & 5GHz</li>
                                 <li><strong>Protocol:</strong> IEEE 802.11 a/b/g/n/ac</li>
                                 <li><strong>Range:</strong> Up to 100m (open space)</li>
-                                <li><strong>Response Time:</strong> <100ms</li>
+                                <li><strong>Response Time:</strong>
+                                    <100ms< /li>
                             </ul>
                         </div>
                     </div>
@@ -151,12 +171,14 @@
         <!-- CTA Section -->
         <section class="py-16 px-4">
             <div class="max-w-7xl mx-auto">
-                <div class="rounded-2xl p-12 text-center" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
+                <div class="rounded-2xl p-12 text-center"
+                    style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
                     <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Home?</h2>
                     <p class="mb-8 text-lg">Join thousands of satisfied customers using our smart home solutions.</p>
-                    <button class="px-8 py-4 rounded-lg font-bold" style="background-color: var(--bg); color: var(--primary);">
+                    <a href="index.html#contact-form" class="px-8 py-4 rounded-lg font-bold"
+                        style="background-color: var(--bg); color: var(--primary);">
                         <i class="ri-shopping-cart-line mr-2"></i> Order Now
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -186,4 +208,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -29,7 +29,16 @@
 
         /* Dark Mode Styles */
         :root {
-            --primary: #6366f1;
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --secondary: #f472b6;
+            --accent: #2dd4bf;
+            --bg: #0f172a;
+            --bg-secondary: #1e293b;
+            --text: #f1f5f9;
+            --text-light: #cbd5e1;
+            --border: #334155;
+            /* --primary: #6366f1;
             --primary-dark: #4f46e5;
             --secondary: #ec4899;
             --accent: #14b8a6;
@@ -37,7 +46,7 @@
             --bg-secondary: #f8fafc;
             --text: #1e293b;
             --text-light: #64748b;
-            --border: #e2e8f0;
+            --border: #e2e8f0; */
         }
 
         html.dark {
@@ -203,8 +212,40 @@
                 transform: rotate(360deg);
             }
         }
+
+        .portrait-video {
+    width: 320px;
+    height: 570px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.portrait-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
     </style>
 </head>
+
+<div id="videoModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center hidden z-50">
+
+    <div class="relative bg-white dark:bg-slate-900 p-4 rounded-lg max-w-2xl w-full">
+
+        <!-- Close Button -->
+        <button onclick="closeVideoModal()"
+            class="absolute -top-3 -right-3 bg-red-600 text-white w-8 h-8 flex items-center justify-center rounded-full text-lg font-bold shadow-lg">
+            ×
+        </button>
+
+        <!-- Video -->
+        <div class="w-full aspect-video rounded-lg overflow-hidden">
+            <iframe id="demoVideo" class="w-full h-full" src="" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
 
 <body>
     <!-- Navigation -->
@@ -236,7 +277,7 @@
                 <!-- Right Side Actions -->
                 <div class="flex items-center gap-4">
                     <!-- Dark Mode Toggle -->
-                    <button id="theme-toggle"
+                    <button hidden id="theme-toggle"
                         class="btn-micro p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300 transform hover:scale-110"
                         title="Toggle dark mode">
                         <i id="theme-icon" class="ri-sun-line text-xl text-amber-500"></i>
@@ -305,19 +346,20 @@
                             class="btn-micro px-8 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 hover:from-indigo-700 hover:to-pink-700 text-white font-semibold transform hover:scale-105 transition-all duration-300 glow-effect">
                             <i class="ri-arrow-right-line mr-2"></i>Request A Demo
                         </button>
-                        <button
-                            class="btn-micro px-8 py-3 rounded-lg border-2 border-indigo-600 dark:border-indigo-400 text-indigo-600 dark:text-indigo-400 font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-900 transform hover:scale-105 transition-all duration-300">
-                            <i class="ri-play-circle-line mr-2"></i>Watch Demo
+                        <button id="watchDemoBtn" class="px-8 py-3 rounded-lg font-semibold"
+                            style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+                            <i class="ri-video-play-line"></i> Watch Demo
                         </button>
                     </div>
 
                     <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-4 pt-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-8">
                         <div
                             class="p-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                             <div class="text-3xl font-bold gradient-text counter" data-target="1000">0</div>
                             <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Happy Customers</p>
                         </div>
+
                         <div
                             class="p-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                             <div class="text-3xl font-bold gradient-text counter" data-target="24" data-final="24 × 7">0
@@ -325,7 +367,9 @@
                             <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Support (24 × 7)</p>
                         </div>
 
+                        <!-- (Optional third stat if needed later) -->
                     </div>
+
                 </div>
 
                 <!-- Right Image -->
@@ -419,7 +463,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
-                <div class="card-hover group">
+                <a href="pro1.html" class="card-hover group">
                     <div
                         class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-indigo-500 to-pink-500 h-64 flex items-center justify-center">
                         <img src="images/pro1.jpg" class="w-full h-full object-cover" alt="">
@@ -438,10 +482,10 @@
                             <i class="ri-information-line mr-2"></i>Know More
                         </button>
                     </div>
-                </div>
+                </a>
 
                 <!-- Product 2 -->
-                <div class="card-hover group">
+                <a href="pro2.html" class="card-hover group">
                     <div
                         class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-teal-500 to-cyan-500 h-64 flex items-center justify-center">
                         <img src="images/pro2.jpg" class="w-full h-full object-cover" alt="">
@@ -460,10 +504,10 @@
                             <i class="ri-information-line mr-2"></i>Know More
                         </button>
                     </div>
-                </div>
+                </a>
 
                 <!-- Product 3 -->
-                <div class="card-hover group">
+                <a href="pro3.html" class="card-hover group">
                     <div
                         class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500 to-red-500 h-64 flex items-center justify-center">
                         <img src="images/pro3.jpg" class="w-full h-full object-cover" alt="">
@@ -482,10 +526,10 @@
                             <i class="ri-information-line mr-2"></i>Know More
                         </button>
                     </div>
-                </div>
+                </a>
 
                 <!-- Product 4 -->
-                <div class="card-hover group">
+                <a href="pro4.html" class="card-hover group">
                     <div
                         class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-500 h-64 flex items-center justify-center">
                         <img src="images/pro4.png" class="w-full h-full object-cover" alt="">
@@ -504,10 +548,10 @@
                             <i class="ri-information-line mr-2"></i>Know More
                         </button>
                     </div>
-                </div>
+                </a>
 
                 <!-- Product 5 -->
-                <div class="card-hover group">
+                <a href="pro5.html" class="card-hover group">
                     <div
                         class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-green-500 to-emerald-500 h-64 flex items-center justify-center">
                         <img src="images/pro5.png" class="w-full h-full object-cover" alt="">
@@ -527,10 +571,10 @@
                             <i class="ri-information-line mr-2"></i>Know More
                         </button>
                     </div>
-                </div>
+                </a>
 
                 <!-- Product 6 -->
-                <div class="card-hover group">
+                <a href="pro6.html" class="card-hover group">
                     <div
                         class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 h-64 flex items-center justify-center">
                         <img src="images/pro6.jpg" class="w-full h-full object-cover" alt="">
@@ -551,8 +595,8 @@
                         </button>
                     </div>
 
-                </div>
             </div>
+        </div>
     </section>
 
     <!-- Testimonials Section -->
@@ -830,7 +874,7 @@
                     <h3 class="text-xl font-bold mb-2">Call Us</h3>
                     <p class="text-slate-600 dark:text-slate-300 mb-2">Available 24/7</p>
                     <a href="tel:+919876543210"
-                        class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">+91-9876-543-210</a>
+                        class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">+91 79817 53794</a>
                 </div>
 
                 <div
@@ -841,8 +885,8 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2">Email Us</h3>
                     <p class="text-slate-600 dark:text-slate-300 mb-2">Response within 24 hours</p>
-                    <a href="mailto:support@Smartronics.com"
-                        class="text-teal-600 dark:text-teal-400 font-semibold hover:underline">support@Smartronics.com</a>
+                    <a href="mailto:smartronics2024@gmail.com"
+                        class="text-teal-600 dark:text-teal-400 font-semibold hover:underline">smartronics2024@gmail.com</a>
                 </div>
 
                 <div
@@ -882,7 +926,7 @@
                             <label class="block text-sm font-semibold mb-2 text-slate-900 dark:text-white">Phone</label>
                             <input type="tel" name="phone"
                                 class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 dark:border-slate-700 focus:border-indigo-600 dark:focus:border-indigo-400 focus:outline-none transition-all duration-300"
-                                placeholder="+91-9876-543-210">
+                                placeholder="7981753794">
                         </div>
                         <div>
                             <label
@@ -1003,6 +1047,28 @@
         </div>
     </footer>
 
+    
+<div id="videoPopup"
+    class="fixed inset-0 hidden flex justify-center items-center bg-black/70 w-full h-screen z-50">
+
+    <div class="relative bg-white p-4 rounded-xl shadow-xl">
+        <!-- Close Button -->
+        <button id="closePopup"
+            class="absolute -top-3 -right-3 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xl font-bold">
+            ×
+        </button>
+
+        <!-- Portrait Video Container -->
+        <div class="portrait-video">
+            <video controls autoplay>
+                <source src="your-video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+
+<script src="productscript.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
