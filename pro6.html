@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant Integration & Support | Premium Smart Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <style>
+        :root {
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --secondary: #f472b6;
+            --accent: #2dd4bf;
+            --bg: #0f172a;
+            --bg-secondary: #1e293b;
+            --text: #f1f5f9;
+            --text-light: #cbd5e1;
+            --border: #334155;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+        .primary-btn {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .primary-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .spec-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Navigation -->
+        <nav class="border-b" style="border-color: var(--border);">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+                 <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-lg gradient-text flex items-center justify-center text-2xl font-bold">
+                        <img src="images/logo1.png" alt="">
+                         </div> <span class="text-xl font-bold gradient-text">Smartronics</span>
+                </div>
+                <a href="index.html#products" class="flex items-center gap-2 px-4 py-2 rounded-lg" style="color: var(--text-light); border: 1px solid var(--border);">
+                    <i class="ri-arrow-left-line"></i> Back to Products
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="py-16 px-4" style="border-bottom: 1px solid var(--border);">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-block px-4 py-2 rounded-full mb-4" style="background-color: var(--bg-secondary); border: 1px solid var(--secondary);">
+                            <span style="color: var(--secondary);">Popular Choice</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Voice Assistant Integration & Support</h1>
+                        <p class="text-lg mb-6" style="color: var(--text-light);">Control your entire smart home with voice commands. Full compatibility with Alexa, Google Home, and Siri for a seamless hands-free experience.</p>
+                        <div class="flex gap-4 flex-wrap">
+                            <button class="primary-btn px-8 py-3 rounded-lg font-semibold flex items-center gap-2">
+                                <i class="ri-shopping-cart-line"></i> Get Now
+                            </button>
+                            <button class="px-8 py-3 rounded-lg font-semibold" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+                                <i class="ri-video-play-line"></i> Watch Demo
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative h-96 rounded-2xl overflow-hidden" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+                        <img src="images/pro6.jpg" alt="Voice Assistant" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Platforms -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Compatible Platforms</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="spec-card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 flex justify-center" style="color: var(--primary);">
+                            <i class="ri-amazon-fill"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Amazon Alexa</h3>
+                        <p style="color: var(--text-light);" class="mb-4">Full integration with Alexa devices for voice control and automation routines.</p>
+                        <button class="px-4 py-2 rounded-lg text-sm" style="background-color: var(--bg); border: 1px solid var(--border);">Learn More</button>
+                    </div>
+                    <div class="spec-card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 flex justify-center" style="color: var(--secondary);">
+                            <i class="ri-google-fill"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Google Home</h3>
+                        <p style="color: var(--text-light);" class="mb-4">Seamless integration with Google Assistant and all Google Home devices.</p>
+                        <button class="px-4 py-2 rounded-lg text-sm" style="background-color: var(--bg); border: 1px solid var(--border);">Learn More</button>
+                    </div>
+                    <div class="spec-card p-8 rounded-xl text-center">
+                        <div class="text-5xl mb-4 flex justify-center" style="color: var(--accent);">
+                            <i class="ri-apple-fill"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Apple Siri</h3>
+                        <p style="color: var(--text-light);" class="mb-4">Full HomeKit compatibility for Apple device users and ecosystems.</p>
+                        <button class="px-4 py-2 rounded-lg text-sm" style="background-color: var(--bg); border: 1px solid var(--border);">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voice Commands -->
+        <section class="py-16 px-4" style="background-color: var(--bg-secondary);">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12">Voice Command Examples</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Lighting Control</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>"Alexa, turn on the living room lights"</li>
+                            <li>"Hey Google, set bedroom brightness to 50%"</li>
+                            <li>"Siri, enable movie night scene"</li>
+                            <li>"Alexa, dim the porch lights"</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--secondary);">Security Control</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>"Alexa, lock the front door"</li>
+                            <li>"Hey Google, is the door locked?"</li>
+                            <li>"Siri, unlock back door"</li>
+                            <li>"Alexa, show me the front camera"</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--accent);">Climate Control</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>"Alexa, set temperature to 72 degrees"</li>
+                            <li>"Hey Google, turn up the AC"</li>
+                            <li>"Siri, what's the current temperature?"</li>
+                            <li>"Alexa, enable eco mode"</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Scene Activation</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>"Alexa, good morning"</li>
+                            <li>"Hey Google, activate movie mode"</li>
+                            <li>"Siri, I'm leaving home"</li>
+                            <li>"Alexa, good night"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup & Support -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12">Setup & Support</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="spec-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--primary);">Easy Setup</h3>
+                        <ol class="space-y-4" style="color: var(--text-light);">
+                            <li class="flex items-start gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--primary); color: var(--bg);">1</span>
+                                <span><strong>Download our app</strong> and create an account</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--primary); color: var(--bg);">2</span>
+                                <span><strong>Add your devices</strong> to the app via QR code</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--primary); color: var(--bg);">3</span>
+                                <span><strong>Link voice assistant</strong> through app settings</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style="background-color: var(--primary); color: var(--bg);">4</span>
+                                <span><strong>Start controlling</strong> everything by voice!</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="spec-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--secondary);">Support Options</h3>
+                        <ul class="space-y-4" style="color: var(--text-light);">
+                            <li class="flex items-start gap-3">
+                                <i class="ri-chat-3-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Live Chat:</strong> 24/7 support available</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-phone-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Phone Support:</strong> Expert technicians ready</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-mail-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Email Support:</strong> Response within 2 hours</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-book-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Documentation:</strong> Complete guides & tutorials</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12">Advanced Features</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="spec-card p-6 rounded-xl text-center">
+                        <div class="text-3xl mb-3" style="color: var(--primary);"><i class="ri-time-line"></i></div>
+                        <h4 class="font-bold mb-2">Routines</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Create automated routines that trigger multiple actions</p>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl text-center">
+                        <div class="text-3xl mb-3" style="color: var(--secondary);"><i class="ri-notification-line"></i></div>
+                        <h4 class="font-bold mb-2">Notifications</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Get alerted about home events in real-time</p>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl text-center">
+                        <div class="text-3xl mb-3" style="color: var(--accent);"><i class="ri-team-line"></i></div>
+                        <h4 class="font-bold mb-2">Family Access</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Share access with family members safely</p>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl text-center">
+                        <div class="text-3xl mb-3" style="color: var(--primary);"><i class="ri-settings-line"></i></div>
+                        <h4 class="font-bold mb-2">Customization</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Customize responses and actions per device</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="rounded-2xl p-12 text-center" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+                    <h2 class="text-3xl font-bold mb-4">Control Everything with Your Voice</h2>
+                    <p class="mb-8 text-lg">Experience the future of smart home automation today</p>
+                    <button class="px-8 py-4 rounded-lg font-bold" style="background-color: var(--bg); color: var(--primary);">
+                        <i class="ri-shopping-cart-line mr-2"></i> Get Started
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

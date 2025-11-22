@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indoor & Outdoor Lighting Solutions | Premium Smart Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <style>
+        :root {
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --secondary: #f472b6;
+            --accent: #2dd4bf;
+            --bg: #0f172a;
+            --bg-secondary: #1e293b;
+            --text: #f1f5f9;
+            --text-light: #cbd5e1;
+            --border: #334155;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+        .primary-btn {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .primary-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .spec-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Navigation -->
+        <nav class="border-b" style="border-color: var(--border);">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-lg gradient-text flex items-center justify-center text-2xl font-bold">
+                        <img src="images/logo1.png" alt="">
+                         </div> <span class="text-xl font-bold gradient-text">Smartronics</span>
+                </div>
+                <a href="index.html#products" class="flex items-center gap-2 px-4 py-2 rounded-lg" style="color: var(--text-light); border: 1px solid var(--border);">
+                    <i class="ri-arrow-left-line"></i> Back to Products
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="py-16 px-4" style="border-bottom: 1px solid var(--border);">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-block px-4 py-2 rounded-full mb-4" style="background-color: var(--bg-secondary); border: 1px solid var(--primary);">
+                            <span style="color: var(--primary);">New Release</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Indoor & Outdoor Lighting Solutions</h1>
+                        <p class="text-lg mb-6" style="color: var(--text-light);">Transform your spaces with intelligent lighting. Control ambience, pathway, landscape, and accent lighting all from your smartphone.</p>
+                        <div class="flex gap-4 flex-wrap">
+                            <button class="primary-btn px-8 py-3 rounded-lg font-semibold flex items-center gap-2">
+                                <i class="ri-shopping-cart-line"></i> Get Now
+                            </button>
+                            <button class="px-8 py-3 rounded-lg font-semibold" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+                                <i class="ri-video-play-line"></i> Watch Demo
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative h-96 rounded-2xl overflow-hidden" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                        <img src="images/pro5.png" alt="Smart Lighting" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lighting Types -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12">Complete Lighting Solutions</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="spec-card p-6 rounded-xl">
+                        <div class="text-3xl mb-4" style="color: var(--secondary);"><i class="ri-lightbulb-line"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Ambient Lighting</h3>
+                        <p style="color: var(--text-light);">Create the perfect atmosphere in living rooms and bedrooms with dimmable LED bulbs.</p>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <div class="text-3xl mb-4" style="color: var(--primary);"><i class="ri-sun-line"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Pathway Lighting</h3>
+                        <p style="color: var(--text-light);">Illuminate walkways and driveways with motion-sensor outdoor lights.</p>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <div class="text-3xl mb-4" style="color: var(--accent);"><i class="ri-tree-line"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Landscape Lighting</h3>
+                        <p style="color: var(--text-light);">Highlight gardens, trees, and architectural features with accent lights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="py-16 px-4" style="background-color: var(--bg-secondary);">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12">Smart Features</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="spec-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--primary);">Control & Automation</h3>
+                        <ul class="space-y-3" style="color: var(--text-light);">
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Dimming:</strong> Adjust brightness from 0-100%</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Color Control:</strong> 16 million color options</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Scheduling:</strong> Set lights to turn on/off automatically</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--accent); margin-top: 2px;"></i>
+                                <span><strong>Scenes:</strong> Create and save custom lighting scenes</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="spec-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--secondary);">Energy & Health</h3>
+                        <ul class="space-y-3" style="color: var(--text-light);">
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--primary); margin-top: 2px;"></i>
+                                <span><strong>Energy Efficient:</strong> LED technology saves up to 80%</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--primary); margin-top: 2px;"></i>
+                                <span><strong>Circadian Rhythm:</strong> Adjusts light temperature throughout day</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--primary); margin-top: 2px;"></i>
+                                <span><strong>Voice Control:</strong> Alexa & Google Home compatible</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-check-line" style="color: var(--primary); margin-top: 2px;"></i>
+                                <span><strong>Geofencing:</strong> Lights adjust based on your location</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Range -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12">Product Range</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Smart Bulbs</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>• 100W equivalent LED bulbs</li>
+                            <li>• 25,000 hours lifespan</li>
+                            <li>• WiFi + Zigbee compatible</li>
+                            <li>• 2700K - 6500K color range</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--secondary);">Outdoor Lights</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>• IP65 weatherproof rating</li>
+                            <li>• Motion sensor capability</li>
+                            <li>• Solar option available</li>
+                            <li>• -20°C to 50°C operating range</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--accent);">Smart Strips</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>• 5m flexible LED strips</li>
+                            <li>• 300+ programmable patterns</li>
+                            <li>• Music sync capability</li>
+                            <li>• Adhesive or mounting brackets</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Wall Controls</h3>
+                        <ul class="space-y-2" style="color: var(--text-light);">
+                            <li>• Wireless dimmer switches</li>
+                            <li>• Touchless motion sensors</li>
+                            <li>• Multi-zone remote controls</li>
+                            <li>• Programmable buttons</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="rounded-2xl p-12 text-center" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                    <h2 class="text-3xl font-bold mb-4">Illuminate Your World</h2>
+                    <p class="mb-8 text-lg">Save energy, improve mood, and enhance your home with smart lighting</p>
+                    <button class="px-8 py-4 rounded-lg font-bold" style="background-color: var(--bg); color: var(--primary);">
+                        <i class="ri-shopping-cart-line mr-2"></i> Order Now
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
